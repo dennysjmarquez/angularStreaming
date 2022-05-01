@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import {AuthHttpInterceptor, AuthModule} from '@auth0/auth0-angular';
-import {environment as env} from '../environments/environment';
+import { environment as env } from '@env';
 
 // Modules
 import {ComponentsModule} from './components/components.module';
