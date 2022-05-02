@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(assets/css/animate.css);
+
+body {
+  padding-top: 4.5rem;
+  background-color: rgb(31, 41, 55);
+  color: rgb(156, 163, 175);
+}
+
+a {
+  color: rgb(156, 163, 175)
+}
+
+a:hover {
+  color: #fff;
+}
+
+.fast {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
