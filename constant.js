@@ -1,14 +1,16 @@
 // Datos de auth0
-const AUTH0_AUDIENCE = 'dennysjmarquez.angularStreaming';
-const AUTH0_DOMAIN = 'dennysjmarquez.auth0.com';
-const AUTH0_CLIENTID = 'xUAoG0QepV7X7TUQM5CniiekB2Ad2SBh';
+const AUTH0_AUDIENCE = '';
+const AUTH0_DOMAIN = '';
+const AUTH0_CLIENTID = '';
+const AUTH0_REDIRECT_URL = ''
 
 // Server url
-const SERVER_URL = 'http://localhost:3800';
+const SERVER_URL = '';
 
 module.exports = {
   AUTH0_AUDIENCE,
   AUTH0_DOMAIN,
   AUTH0_CLIENTID,
+  AUTH0_REDIRECT_URL,
   SERVER_URL
 };
