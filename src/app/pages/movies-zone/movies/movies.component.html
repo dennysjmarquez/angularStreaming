@@ -1,1 +1,36 @@
-<p>movies works!</p>
+<div class="container animated fadeIn">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+
+    <div *ngFor="let movie of movies;" class="col">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img [alt]="movie.title" [height]="movie.images['Poster Art'].height"
+                 [src]="movie.images['Poster Art'].url" [width]="movie.images['Poster Art'].width"
+                 class="img-fluid rounded-start" loading="lazy">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.title}}</h5>
+              <p class="card-text">{{movie.description}}</p>
+              <div>
+              <span class="card-text sub-title">
+
+                  {{ movie.programType === 'movie'
+                ? 'Película'
+                : movie.programType === 'series'
+                  ? 'Series'
+                  : movie.programType}}
+
+              </span>
+                <p class="card-text"><small><strong>{{movie.releaseYear}}</strong></small></p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

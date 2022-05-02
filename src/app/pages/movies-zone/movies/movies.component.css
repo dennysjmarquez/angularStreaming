@@ -1,0 +1,12 @@
+.sub-title {
+  letter-spacing: 6px
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+.card-body {
+  background-color: rgb(33, 37, 41);
+  color: #fff;
+}
