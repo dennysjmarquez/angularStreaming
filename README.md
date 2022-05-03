@@ -1,9 +1,12 @@
 # Proyecto (angularStreaming)
 
-Este es una clásica plataforma de streaming, elaborado en Angular versión 13.3.4
-Bootstrap como CSS, posee un sistema de autentificación con auth0, protección de rutas sensibles con canLoad, canActivate, lazy loading, y todo en módulos.
+Este es una clásica plataforma de streaming, elaborado en **Angular versión 13.3.4**
+**Bootstrap 5** como CSS, posee un sistema de autentificación con **auth0**, protección de rutas sensibles con **canLoad**, **canActivate**, **lazy loading**, y todo en módulos.
 
-Guard para hacer funcionar la protección canLoad, ya que el de auth0 no manda a identificar el usuario en canLoad con el Guard que él trae, este que posee el proyecto si lo hace y se implantó para evitar que se carguen componentes si el usuario no está debidamente identificado lo redirige al login
+Un **Guard** para hacer funcionar la protección en el **canLoad**, ya que el de **auth0** no manda a identificar al usuario si falla en el canLoad, pero el que cree si lo hace y se implantó para evitar que se carguen componentes si el usuario no está debidamente identificado lo redirige al login.
+
+Puede ver una demo alojada en **Heroku**
+https://angular-streaming.herokuapp.com/
 
 ## Como hacerlo funcionar
 
