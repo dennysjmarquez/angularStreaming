@@ -42,6 +42,7 @@ https://manage.auth0.com/dashboard/
 **AUTH0_REDIRECT_URL**= La URL que coloques aquí la tienes que agregar como callback permitidos en la configuración de auth0 y muy importante el callback debe de ser la URL donde está el proyecto sumándole  **/auth** al final 
 
 **Ejemplo:** `https://ddddd.com/auth`
+`http://localhost:PORT/auth`
 
 **SERVER_URL** = Esta es la URL del servidor donde se va a consumir la data
 
