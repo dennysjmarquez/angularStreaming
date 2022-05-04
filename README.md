@@ -44,7 +44,14 @@ https://manage.auth0.com/dashboard/
 **Ejemplo:** `https://ddddd.com/auth`
 
 **SERVER_URL** = Esta es la URL del servidor donde se va a consumir la data
-<br/><br/><br/>
+
+**El servidor que retorna la data para este proyecto lo puedes encontrar aquí
+https://github.com/dennysjmarquez/angularStreamingServer**
+
+Compilas para producción este proyecto y lo agregas en la carpeta **public** del servidor, pero si solo necesitas que te sirva la data no es necesario que hagas esto, solo echa andar el servidor con su debida configuración.
+
+<br/>
+
 **Ya con las configuraciones listas:**
 
 ## Development server
