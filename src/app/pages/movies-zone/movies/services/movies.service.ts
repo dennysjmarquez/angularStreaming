@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment as env } from '@env';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,11 +19,7 @@ export class MoviesService {
   public filterType: string | null = null;
 
   getMovies(): Observable<MoviesType> {
-    return this.http.get<MoviesType>(`${env.SERVER_URL}/api/movies`).pipe(
-      tap((movies: MoviesType) => {
-        this.movies = movies;
-      })
-    );
+    return this.http.get<MoviesType>(`${env.SERVER_URL}/api/movies`);
   }
 }
 
