@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(assets/css/animate.css);
+@import url(assets/css/fonts.css);
 
 body {
   padding-top: 4.5rem;

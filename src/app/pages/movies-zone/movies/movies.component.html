@@ -1,19 +1,59 @@
-<div class="container animated fadeIn">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="container-fluid animated fadeIn px-lg-5 pt-lg-4">
+  <div class="card movies-wrap">
 
-    <div *ngFor="let movie of movies;" class="col">
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img [alt]="movie.title" [height]="movie.images['Poster Art'].height"
-                 [src]="movie.images['Poster Art'].url" [width]="movie.images['Poster Art'].width"
-                 class="img-fluid rounded-start" loading="lazy">
+    <div class="card-body sticky bar-filters row row-cols-1 row-cols-md-2 g-4">
+
+      <div class="bars sort col pt-0 mt-0 align-items-center">
+        <span class="label">Ordenar por:</span>
+        <app-sorting-button [onSort]="sort.field === 'name' ? sort.sort : null" class="button" field="name"
+                            label="Nombre"
+                            (onClick)="onSort($event)"></app-sorting-button>
+        <app-sorting-button *ngIf="filterYear === null" [onSort]="sort.field === 'year' ? sort.sort : null"
+                            class="button" field="year"
+                            label="Año"
+                            (onClick)="onSort($event)"></app-sorting-button>
+      </div>
+      <div class="col pt-0 mt-0 d-md-flex justify-content-md-end">
+
+        <div class="bars filter align-items-center">
+          <div>
+            <app-filter-year field="year" (onFilter)="onFilter($event)"></app-filter-year>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{movie.title}}</h5>
-              <p class="card-text">{{movie.description}}</p>
-              <div>
+          <div>
+            <app-filter-type field="type" [selected]="filterType" (onFilter)="onFilter($event)"></app-filter-type>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col no-d mt-2 mb-2 show-result-m">Mostrando <span class="badge bg-secondary">{{movies.length}}</span>
+        Resultados
+      </div>
+
+    </div>
+
+    <div class="card-body movies">
+
+      <div class="col no-d mt-2 show-result">Mostrando <span class="badge bg-secondary">{{movies.length}}</span>
+        Resultados
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4  pt-lg-4">
+
+        <div *ngFor="let movie of movies;" class="col d-flex justify-content-center">
+          <div class="card mb-3 movie-card" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img [alt]="movie.title" [height]="movie.images['Poster Art'].height"
+                     [src]="movie.images['Poster Art'].url" [width]="movie.images['Poster Art'].width"
+                     class="img-fluid rounded-start" loading="lazy">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{movie.title}}</h5>
+                  <p class="card-text">{{movie.description}}</p>
+                  <div>
               <span class="card-text sub-title">
 
                   {{ movie.programType === 'movie'
@@ -23,14 +63,18 @@
                   : movie.programType}}
 
               </span>
-                <p class="card-text"><small><strong>{{movie.releaseYear}}</strong></small></p>
+                    <p class="card-text"><small><strong>{{movie.releaseYear}}</strong></small></p>
+                  </div>
+                </div>
+
               </div>
+
             </div>
-
           </div>
-
         </div>
       </div>
     </div>
+
   </div>
+
 </div>

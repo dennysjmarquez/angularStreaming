@@ -1,7 +1,7 @@
 <div id="app" class="d-flex flex-column h-100">
 
-  <!-- Hay que espera que Auth0 devuelva el estado,
-  si Auth0 ya ha autenticado de lo contrario no va a funcionar bien -->
+  <!-- Hay que espera que Auth0 devuelva el estado.
+  Si Auth0 ya ha autenticado de lo contrario no va a funcionar bien -->
   <div class="d-flex flex-column h-100 justify-content-center align-items-center"
        *ngIf="auth.isLoading$ | async; else loaded">
     <div class="spinner-grow text-secondary" role="status">
@@ -12,9 +12,7 @@
   <ng-template #loaded>
     <app-nav-bar></app-nav-bar>
      <div class="container flex-grow-1">
-      <div class="mt-5">
-        <router-outlet></router-outlet>
-      </div>
+       <router-outlet></router-outlet>
     </div>
 
   </ng-template>
