@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   EntriesType,
   MoviesService,
   MoviesType,
 } from './services/movies.service';
-import {catchError, finalize} from 'rxjs';
-import {SortDataType} from './components/sorting-button/sorting-button.component';
+import { SortDataType } from './components/sorting-button/sorting-button.component';
 import SortUtils from '../../../utils/SortUtils';
+import { catchError, finalize } from 'rxjs';
 
 @Component({
   selector: 'app-movies',
@@ -21,32 +21,37 @@ export class MoviesComponent implements OnInit {
   public filterYear: string | null = this._moviesService.filterYear;
   public filterType: string | null = this._moviesService.filterType;
 
-  constructor(private _moviesService: MoviesService) {
-    _moviesService
+  constructor(private _moviesService: MoviesService) {}
+
+  ngOnInit(): void {
+    this._moviesService
       .getMovies()
       .pipe(
-        catchError((err): any => {
-        }),
-        finalize(() => {
-        })
+        catchError((err): any => {}),
+        finalize(() => {})
       )
       .subscribe((movies: MoviesType) => {
         this.movies = movies.entries;
+        this._moviesService.movies = movies;
       });
   }
 
-  ngOnInit(): void {
-  }
-
   restSort() {
-    this._moviesService.sort = {field: '', sort: null};
+    this._moviesService.sort = { field: '', sort: null };
     this.sort = this._moviesService.sort;
   }
 
-  onFilter(filter: FilterType) {
-    const {name, value} = filter;
+  runFilter(filter: FilterType) {
+    const { name, value } = filter;
     const movies = this._moviesService.movies.entries.slice();
     this.restSort();
+
+    if (
+      (this.filterYear !== null && this.filterYear.trim().length === 0) ||
+      isNaN(this.filterYear as any)
+    ) {
+      this.filterYear = null;
+    }
 
     if (name === 'type') {
       this._moviesService.filterType = value;
@@ -82,8 +87,8 @@ export class MoviesComponent implements OnInit {
     }
   }
 
-  onSort(sortData: SortDataType) {
-    const {field, sort} = sortData;
+  runSort(sortData: SortDataType) {
+    const { field, sort } = sortData;
     this._moviesService.sort = sortData;
     this.sort = this._moviesService.sort;
 

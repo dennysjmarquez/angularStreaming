@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class SortingButtonComponent implements OnInit {
   @Input() label: string;
   @Input() field: string = 'field';
-  @Input() onSort: 'asc' | 'desc' | null = null;
+  @Input() sort: 'asc' | 'desc' | null = null;
 
   @Output() onClick: EventEmitter<SortDataType> = new EventEmitter();
 
@@ -16,10 +16,10 @@ export class SortingButtonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  sort() {
-    const sort = this.onSort;
+  runSort() {
+    const sort = this.sort;
 
-    this.onSort =
+    this.sort =
       sort === null
         ? 'desc'
         : sort === 'desc'
@@ -30,7 +30,7 @@ export class SortingButtonComponent implements OnInit {
 
     this.onClick.emit({
       field: this.field,
-      sort: this.onSort,
+      sort: this.sort,
     });
   }
 }

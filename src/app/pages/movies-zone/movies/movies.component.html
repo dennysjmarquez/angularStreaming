@@ -5,22 +5,22 @@
 
       <div class="bars sort col pt-0 mt-0 align-items-center">
         <span class="label">Ordenar por:</span>
-        <app-sorting-button [onSort]="sort.field === 'name' ? sort.sort : null" class="button" field="name"
+        <app-sorting-button [sort]="sort.field === 'name' ? sort.sort : null" class="button" field="name"
                             label="Nombre"
-                            (onClick)="onSort($event)"></app-sorting-button>
-        <app-sorting-button *ngIf="filterYear === null" [onSort]="sort.field === 'year' ? sort.sort : null"
+                            (onClick)="runSort($event)"></app-sorting-button>
+        <app-sorting-button *ngIf="filterYear === null" [sort]="sort.field === 'year' ? sort.sort : null"
                             class="button" field="year"
                             label="Año"
-                            (onClick)="onSort($event)"></app-sorting-button>
+                            (onClick)="runSort($event)"></app-sorting-button>
       </div>
       <div class="col pt-0 mt-0 d-md-flex justify-content-md-end">
 
         <div class="bars filter align-items-center">
           <div>
-            <app-filter-year field="year" (onFilter)="onFilter($event)"></app-filter-year>
+            <app-filter-year field="year" (runFilter)="runFilter($event)"></app-filter-year>
           </div>
           <div>
-            <app-filter-type field="type" [selected]="filterType" (onFilter)="onFilter($event)"></app-filter-type>
+            <app-filter-type field="type" [selected]="filterType" (runFilter)="runFilter($event)"></app-filter-type>
           </div>
 
         </div>
