@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SortingButtonComponent } from './sorting-button.component';
 
-describe('SortingButtonComponent', () => {
+xdescribe('SortingButtonComponent', () => {
   let component: SortingButtonComponent;
   let fixture: ComponentFixture<SortingButtonComponent>;
 
