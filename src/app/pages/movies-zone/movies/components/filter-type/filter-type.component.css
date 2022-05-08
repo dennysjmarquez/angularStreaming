@@ -1,0 +1,73 @@
+.filter {
+  display: inline-flex;
+  align-items: center;
+}
+
+.label {
+  white-space: nowrap;
+  margin-right: 10px;
+  color: #ccc;
+}
+
+.button {
+  display: inline-flex;
+  --color: #fff;
+
+  position: relative;
+  overflow: hidden;
+  transition: .5s;
+  color: var(--color);
+  z-index: 1;
+}
+
+.button::before, .button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.button::before {
+  top: -2em;
+  left: -2em;
+}
+
+.button.active {
+  color: #000;
+}
+
+.button::after {
+  left: calc(100% + 2em);
+  top: calc(100% + 2em);
+}
+
+.button:hover::before, .button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.button:hover {
+  color: rgb(10, 25, 30);
+}
+
+.button:active {
+  filter: brightness(.8);
+}
+
+@media (min-width: 768px) {
+  .filter {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .filter {
+    margin-top: 20px;
+  }
+}

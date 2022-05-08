@@ -1,0 +1,15 @@
+<div class="filter">
+  <span class="label">Mostar:</span>
+  <div class="btn-group btn-group-sm" role="group" aria-label="Selecciona el tipo video">
+    <button class="btn btn-outline-light button" [ngClass]="{'active': selected === null}" (click)="onClick(null)">
+      Todas
+    </button>
+    <button class="btn btn-outline-light button" [ngClass]="{'active': selected === 'movie'}"
+            (click)="onClick('movie')">
+      Películas
+    </button>
+    <button class="btn btn-outline-light button" [ngClass]="{'active': selected === 'series'}"
+            (click)="onClick('series')">Series
+    </button>
+  </div>
+</div>
