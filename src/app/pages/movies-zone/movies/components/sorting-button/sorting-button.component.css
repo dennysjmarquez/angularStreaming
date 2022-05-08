@@ -1,0 +1,29 @@
+.sortable {
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable:hover {
+  color: #ccc;
+}
+
+.sortable > .sort-indicator {
+  font-family: "footable", serif;
+  margin-left: 10px;
+}
+
+.sortable.sort > .sort-indicator:before {
+  content: "\e022";
+}
+
+.sortable.sorted > .sort-indicator:before {
+  content: "\e013";
+}
+
+.sortable.sorted-desc > .sort-indicator:before {
+  content: "\e012";
+}
+
+
+

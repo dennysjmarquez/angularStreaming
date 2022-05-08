@@ -1,0 +1,7 @@
+<div class="sortable"
+     [ngClass]="{'sort': onSort === null, 'sorted': onSort === 'asc', 'sorted-desc' : onSort === 'desc'}"
+     (click)="sort();">
+  {{label}}
+  <span class="sort-indicator"></span>
+</div>
+
