@@ -1,6 +1,6 @@
 # Proyecto (angularStreaming)
 
-Esta es una clásica plataforma de **Movie**, elaborado en **Angular versión 13.3.4 Bootstrap 5** como CSS, posee un sistema de autentificación con auth0, protección de rutas sensibles con canLoad, canActivate, Lazy-loading.
+Esta es una clásica plataforma de **Movie**, elaborado en **Angular versión 13.3.4 Bootstrap 5** como CSS, **posee un sistema de autentificación con auth0**, **protección de rutas sensibles** con **canLoad**, **canActivate**, **Implementación de Lazy-loading**.
 
 El usuario tiene la posibilidad de **ordenar** y **filtrar** los datos, se pueden ordena las películas por nombre, año, y se pueden filtrar por año, película o serie.
 
