@@ -1,12 +1,19 @@
 # Proyecto (angularStreaming)
 
-Este es una clásica plataforma de streaming, elaborado en **Angular versión 13.3.4**
-**Bootstrap 5** como CSS, posee un sistema de autentificación con **auth0**, protección de rutas sensibles con **canLoad**, **canActivate**, **lazy loading**, y todo en módulos.
+Esta es una clásica plataforma de **Movie**, elaborado en **Angular versión 13.3.4 Bootstrap 5** como CSS, posee un sistema de autentificación con auth0, protección de rutas sensibles con canLoad, canActivate, Lazy-loading.
 
-Un **Guard** para hacer funcionar la protección en el **canLoad**, ya que el de **auth0** no manda a identificar al usuario si falla en el canLoad, pero el que cree si lo hace y se implantó para evitar que se carguen componentes si el usuario no está debidamente identificado lo redirige al login.
+El usuario tiene la posibilidad de **ordenar** y **filtrar** los datos, se pueden ordena las películas por nombre, año, y se pueden filtrar por año, película o serie.
+
+**Creación de una directiva** para controlar el **evento keypress** y poder limitar a solo números el input que se usa para filtrar por año.
+
+Use el módulo **ReactiveFormsModule** para poder **validar** el resultado del input para el filtrado por fechas haciendo uso del **FormControl** y sus validaciones, **Validators.pattern('^[0–9]*$')**, **Validators.maxLength(4)**, **Validators.min(0)**, **Validators.max(new Date().getFullYear())**.
+
+Toda está modularizado, cree un **Guard** para hacer funcionar la protección en el **canLoad**, ya que el que proporciona **auth0** no manda a identificar al usuario si falla el **canLoad**, pero **el que cree para este proyecto si lo hace** y se implantó para evitar que se carguen componentes si el usuario no está debidamente identificado, el mismo es redirigido al login en ese caso.
+
+Implemente **Unit test (Pruebas Unitarias)**, y probé los resultados de las funciones para ordenar la data, filtrar la data, probé la Subscription para atraer la data de las películas en el servicio usando de **spyOn** a **callFake**.
 
 Puede ver una demo alojada en **Heroku**
-https://angular-streaming.herokuapp.com/
+[https://angular-streaming.herokuapp.com/]()
 
 ## Como hacerlo funcionar
 
@@ -31,7 +38,7 @@ const SERVER_URL = '';
 
 Los datos de Auth0 los puedes obtener en el Dashboard.
 
-https://manage.auth0.com/dashboard/
+[https://manage.auth0.com/dashboard/]()
 
 **AUTH0_AUDIENCE** =
 
@@ -47,7 +54,7 @@ https://manage.auth0.com/dashboard/
 **SERVER_URL** = Esta es la URL del servidor donde se va a consumir la data
 
 **El servidor que retorna la data para este proyecto lo puedes encontrar aquí
-https://github.com/dennysjmarquez/angularStreamingServer**
+[https://github.com/dennysjmarquez/angularStreamingServer]()**
 
 Compilas para producción este proyecto y lo agregas en la carpeta **public** del servidor, pero si solo necesitas que te sirva la data no es necesario que hagas esto, solo echa andar el servidor con su debida configuración.
 
