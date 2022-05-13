@@ -10,7 +10,7 @@ Use el módulo **ReactiveFormsModule** para poder **validar** el resultado del i
 
 Toda está modularizado, cree un **Guard** para hacer funcionar la protección en el **canLoad**, ya que el que proporciona **auth0** no manda a identificar al usuario si falla el **canLoad**, pero **el que cree para este proyecto si lo hace** y se implantó para evitar que se carguen componentes si el usuario no está debidamente identificado, el mismo es redirigido al login en ese caso.
 
-Implemente **Unit test (Pruebas Unitarias)**, y probé los resultados de las funciones para ordenar la data, filtrar la data, probé la Subscription para atraer la data de las películas en el servicio usando de **spyOn** a **callFake**.
+Implemente **Unit test (Pruebas Unitarias) jasmine-core": "~4.0.0"**, y probé los resultados de las funciones para ordenar la data, filtrar la data, probé la Subscription para atraer la data de las películas en el servicio usando de **spyOn** a **callFake**.
 
 Puede ver una demo alojada en **Heroku**
 [https://angular-streaming.herokuapp.com/]()
