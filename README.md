@@ -1,4 +1,8 @@
 # Proyecto (angularStreaming)
+Angular 13, clásica plataforma de Movie
+
+
+<img src="https://miro.medium.com/max/1400/1*QrWAwqSDS6DyumcoQqYkXw.png"/>
 
 Esta es una clásica plataforma de **Movie**, elaborado en **Angular versión 13.3.4 Bootstrap 5** como CSS, **posee un sistema de autentificación con auth0**, **protección de rutas sensibles** con **canLoad**, **canActivate**, **Implementación de Lazy-loading**.
 
