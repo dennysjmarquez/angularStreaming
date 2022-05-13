@@ -12,8 +12,7 @@ Toda está modularizado, cree un **Guard** para hacer funcionar la protección e
 
 Implemente **Unit test (Pruebas Unitarias) jasmine-core": "~4.0.0"**, y probé los resultados de las funciones para ordenar la data, filtrar la data, probé la Subscription para atraer la data de las películas en el servicio usando de **spyOn** a **callFake**.
 
-Puede ver una demo alojada en **Heroku**
-[https://angular-streaming.herokuapp.com/]()
+Puede ver una demo alojada en **Heroku** [https://angular-streaming.herokuapp.com/](https://angular-streaming.herokuapp.com/)
 
 ## Como hacerlo funcionar
 
@@ -38,7 +37,7 @@ const SERVER_URL = '';
 
 Los datos de Auth0 los puedes obtener en el Dashboard.
 
-[https://manage.auth0.com/dashboard/]()
+[https://manage.auth0.com/dashboard/](https://manage.auth0.com/dashboard/)
 
 **AUTH0_AUDIENCE** =
 
@@ -53,8 +52,8 @@ Los datos de Auth0 los puedes obtener en el Dashboard.
 
 **SERVER_URL** = Esta es la URL del servidor donde se va a consumir la data
 
-**El servidor que retorna la data para este proyecto lo puedes encontrar aquí
-[https://github.com/dennysjmarquez/angularStreamingServer]()**
+**El servidor que retorna la data para este proyecto lo puedes encontrar aquí** 
+[https://github.com/dennysjmarquez/angularStreamingServer](https://github.com/dennysjmarquez/angularStreamingServer)
 
 Compilas para producción este proyecto y lo agregas en la carpeta **public** del servidor, pero si solo necesitas que te sirva la data no es necesario que hagas esto, solo echa andar el servidor con su debida configuración.
 
